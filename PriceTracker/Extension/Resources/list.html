@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Price Tracker — Tracked Items</title>
+  <link rel="stylesheet" href="list.css" />
+</head>
+<body>
+  <header class="pt-topbar">
+    <div class="pt-brand">
+      <img src="images/icon-48.png" alt="" width="28" height="28" />
+      <h1>Price Tracker</h1>
+    </div>
+    <div class="pt-actions">
+      <button id="check-all" class="pt-btn">Check all now</button>
+    </div>
+  </header>
+
+  <section class="pt-settings">
+    <label for="interval">Check prices every</label>
+    <select id="interval">
+      <option value="60">1 hour</option>
+      <option value="180">3 hours</option>
+      <option value="360">6 hours</option>
+      <option value="720">12 hours</option>
+      <option value="1440">24 hours</option>
+    </select>
+    <label class="pt-check">
+      <input type="checkbox" id="notify-any" />
+      Notify me on any price drop
+    </label>
+    <span id="status" class="pt-status"></span>
+  </section>
+
+  <main>
+    <div id="empty" class="pt-empty" hidden>
+      <p>You're not tracking anything yet.</p>
+      <p class="pt-muted">
+        Visit a product page on a shopping site, click the Price Tracker icon in
+        Safari's toolbar, and choose <strong>Track this price</strong>.
+      </p>
+    </div>
+    <ul id="items" class="pt-items"></ul>
+  </main>
+
+  <template id="item-template">
+    <li class="pt-item">
+      <img class="pt-item-thumb" alt="" />
+      <div class="pt-item-main">
+        <a class="pt-item-name" target="_blank" rel="noopener"></a>
+        <div class="pt-item-meta">
+          <span class="pt-current"></span>
+          <span class="pt-delta"></span>
+          <span class="pt-lowest"></span>
+        </div>
+        <div class="pt-item-target">
+          <label>Target:</label>
+          <input type="number" class="pt-target-input" min="0" step="0.01" placeholder="none" />
+          <span class="pt-error"></span>
+        </div>
+      </div>
+      <div class="pt-item-chart">
+        <svg class="pt-spark" viewBox="0 0 120 40" preserveAspectRatio="none" aria-hidden="true"></svg>
+        <div class="pt-item-buttons">
+          <button class="pt-check-one pt-icon-btn" title="Check now">↻</button>
+          <button class="pt-remove pt-icon-btn" title="Stop tracking">✕</button>
+        </div>
+      </div>
+    </li>
+  </template>
+
+  <script src="list.js"></script>
+</body>
+</html>

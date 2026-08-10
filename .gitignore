@@ -1,0 +1,16 @@
+# Generated Xcode project (produced by scripts/build-xcode-project.sh)
+PriceTracker/xcode/
+build/
+
+# macOS
+.DS_Store
+
+# Xcode user state
+*.xcuserstate
+xcuserdata/
+*.xcworkspace/xcuserdata/
+DerivedData/
+
+# Node
+node_modules/
+npm-debug.log*

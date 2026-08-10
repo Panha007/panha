@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Price Tracker</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <header class="pt-header">
+    <img src="images/icon-48.png" alt="" width="24" height="24" />
+    <h1>Price Tracker</h1>
+  </header>
+
+  <main id="content" class="pt-content">
+    <div id="loading" class="pt-state">Looking for a product on this page…</div>
+
+    <section id="detected" class="pt-card" hidden>
+      <img id="product-image" class="pt-thumb" alt="" hidden />
+      <div class="pt-card-body">
+        <p id="product-name" class="pt-name"></p>
+        <p id="product-price" class="pt-price"></p>
+      </div>
+    </section>
+
+    <div id="target-row" class="pt-target" hidden>
+      <label for="target-input">Alert me at or below</label>
+      <input id="target-input" type="number" min="0" step="0.01" placeholder="Optional" />
+    </div>
+
+    <button id="track-btn" class="pt-btn pt-btn-primary" hidden>Track this price</button>
+    <div id="already" class="pt-note" hidden>✓ Already tracking this product.</div>
+
+    <div id="empty" class="pt-state" hidden>
+      No product detected on this page.<br />
+      Open a product page on a shopping site and try again.
+    </div>
+  </main>
+
+  <footer class="pt-footer">
+    <span id="count" class="pt-count"></span>
+    <div class="pt-footer-actions">
+      <button id="check-now" class="pt-link">Check now</button>
+      <button id="open-list" class="pt-link">View all</button>
+    </div>
+  </footer>
+
+  <script src="popup.js"></script>
+</body>
+</html>
