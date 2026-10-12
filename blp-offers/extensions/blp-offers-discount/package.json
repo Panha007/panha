@@ -4,8 +4,22 @@
   "license": "UNLICENSED",
   "type": "module",
   "scripts": {
+    "shopify": "npm exec -- shopify",
+    "typegen": "npm exec -- shopify app function typegen",
     "build": "npm exec -- shopify app function build",
     "test": "node --test test/run.test.mjs"
+  },
+  "codegen": {
+    "schema": "schema.graphql",
+    "documents": "src/*.graphql",
+    "generates": {
+      "./generated/api.ts": {
+        "plugins": ["typescript", "typescript-operations"]
+      }
+    },
+    "config": {
+      "omitOperationSuffix": true
+    }
   },
   "dependencies": {
     "@shopify/shopify_function": "~1.0.0"

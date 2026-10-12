@@ -31,4 +31,4 @@ jobs:
         env:
           SHOPIFY_CLI_TTY: "0"
           SHOPIFY_APP_AUTOMATION_TOKEN: ${{ secrets.SHOPIFY_APP_AUTOMATION_TOKEN }}
-        run: npx shopify app deploy --force --allow-updates --source-control-url "${{ github.server_url }}/${{ github.repository }}/commit/${{ github.sha }}"
+        run: npx shopify app deploy --allow-updates --source-control-url "${{ github.server_url }}/${{ github.repository }}/commit/${{ github.sha }}"
