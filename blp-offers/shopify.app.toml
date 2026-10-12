@@ -1,0 +1,20 @@
+# BLP Offers — gift-with-purchase and upsell discounts for Baby Little Planet
+# Replaces the Koala Upsells & Gifts app. Offers are configured from the BLP Offers dashboard (artifact).
+client_id = "8b43b91101aee70349719975af58faad"
+name = "BLP Offers"
+handle = "blp-offers"
+application_url = "https://www.babylittleplanet.com.au/pages/blp-offers"
+embedded = false
+
+[build]
+include_config_on_deploy = true
+automatically_update_urls_on_dev = false
+
+[access_scopes]
+scopes = "write_discounts,read_discounts,read_products"
+
+[auth]
+redirect_urls = ["https://www.babylittleplanet.com.au/"]
+
+[webhooks]
+api_version = "2025-10"

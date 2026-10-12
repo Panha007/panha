@@ -1,0 +1,18 @@
+api_version = "2025-10"
+
+[[extensions]]
+name = "t:name"
+handle = "blp-offers-discount"
+type = "function"
+description = "t:description"
+
+  [[extensions.targeting]]
+  target = "cart.lines.discounts.generate.run"
+  input_query = "src/run.graphql"
+  input_variables = { namespace = "blp_offers", key = "vars" }
+  export = "run"
+
+  [extensions.build]
+  command = ""
+  path = "dist/function.wasm"
+  watch = ["src/**/*.js"]

@@ -1,0 +1,13 @@
+{
+  "name": "blp-offers-discount",
+  "version": "1.0.0",
+  "license": "UNLICENSED",
+  "type": "module",
+  "scripts": {
+    "build": "npm exec -- shopify app function build",
+    "test": "node --test test/run.test.mjs"
+  },
+  "dependencies": {
+    "@shopify/shopify_function": "~1.0.0"
+  }
+}

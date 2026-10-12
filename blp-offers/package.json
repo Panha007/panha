@@ -1,0 +1,15 @@
+{
+  "name": "blp-offers-app",
+  "version": "1.0.0",
+  "private": true,
+  "license": "UNLICENSED",
+  "workspaces": ["extensions/*"],
+  "scripts": {
+    "shopify": "shopify",
+    "build": "shopify app build",
+    "deploy": "shopify app deploy --force --allow-updates"
+  },
+  "devDependencies": {
+    "@shopify/cli": "^3.90.0"
+  }
+}

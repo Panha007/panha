@@ -1,0 +1,5 @@
+node_modules/
+extensions/*/dist/
+extensions/*/generated/
+.shopify/
+*.log

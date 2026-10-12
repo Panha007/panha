@@ -1,0 +1,48 @@
+query RunInput(
+  $c1: [ID!]! = [], $c2: [ID!]! = [], $c3: [ID!]! = [], $c4: [ID!]! = [], $c5: [ID!]! = [],
+  $c6: [ID!]! = [], $c7: [ID!]! = [], $c8: [ID!]! = [], $c9: [ID!]! = [], $c10: [ID!]! = [],
+  $c11: [ID!]! = [], $c12: [ID!]! = [], $c13: [ID!]! = [], $c14: [ID!]! = [], $c15: [ID!]! = [],
+  $c16: [ID!]! = [], $c17: [ID!]! = [], $c18: [ID!]! = [], $c19: [ID!]! = [], $c20: [ID!]! = []
+) {
+  cart {
+    lines {
+      id
+      quantity
+      offer: attribute(key: "_blp_offer") { value }
+      cost { amountPerQuantity { amount } }
+      merchandise {
+        __typename
+        ... on ProductVariant {
+          id
+          product {
+            id
+            c1: inAnyCollection(ids: $c1)
+            c2: inAnyCollection(ids: $c2)
+            c3: inAnyCollection(ids: $c3)
+            c4: inAnyCollection(ids: $c4)
+            c5: inAnyCollection(ids: $c5)
+            c6: inAnyCollection(ids: $c6)
+            c7: inAnyCollection(ids: $c7)
+            c8: inAnyCollection(ids: $c8)
+            c9: inAnyCollection(ids: $c9)
+            c10: inAnyCollection(ids: $c10)
+            c11: inAnyCollection(ids: $c11)
+            c12: inAnyCollection(ids: $c12)
+            c13: inAnyCollection(ids: $c13)
+            c14: inAnyCollection(ids: $c14)
+            c15: inAnyCollection(ids: $c15)
+            c16: inAnyCollection(ids: $c16)
+            c17: inAnyCollection(ids: $c17)
+            c18: inAnyCollection(ids: $c18)
+            c19: inAnyCollection(ids: $c19)
+            c20: inAnyCollection(ids: $c20)
+          }
+        }
+      }
+    }
+  }
+  discount {
+    discountClasses
+    config: metafield(namespace: "blp_offers", key: "config") { jsonValue }
+  }
+}
